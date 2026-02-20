@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lanchonete Burguer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header_brand">
+            <span class="header_logo"><img src="./img/logoburguer.png" alt="Logo burger"></span>
+            <div>
+                <h1 class="header_title">Lanchonete Burguer</h1>
+                <p class="header_subtitle"> Mini Loja estilo ifood</p>
+            </div>
+        </div>
+        <div class="header_status">
+            <span class="header_pill" id="date-span">Aberto agora - 18h ás 23h</span>
+        </div>
+    </header>
+
+
+    <main class="layout">
+
+
+        <section class="menu">
+            <div class="menu_header">
+                <h2 class="menu_title">Cardápio</h2>
+                <p class="menu_subtitle">Escolha seus favoritos, monte o seu pedido e finalize pelo whatsapp</p>
+            </div>
+
+            <div class="menu_filters">
+
+                <button class="filter-button filter-button--active" data-category="all">Tudo</button>
+                <button class="filter-button" data-category="burguer">Burgues</button>
+                <button class="filter-button" data-category="combo">Combos</button>
+                <button class="filter-button" data-category="bebida">Bebidas</button>
+                <button class="filter-button" data-category="sobremesa">Sobremesas</button>
+            </div>
+
+
+            <div class="menu_grid" id="products-list">
+
+            </div>
+            <section class="admin">
+                <button id="toggle-admin" class="admin_toggle">
+                    ⚙️ Modo Professor: Adicionar novo produto
+                </button>
+                <form class="admin_form" id="admin-form">
+                    <h3>Adicionar Produtos</h3>
+
+                    <div class="admin_group">
+                        <label for="admin-name">Nome do produto</label>
+                        <input type="text" id="admin-name" placeholder="Ex: X-bacon" required>
+                    </div>
+                    <div class="admin_group">
+                        <label for="admin-description">Descrição</label>
+                        <textarea id="admin-description" rows="2"
+                            placeholder="Ex: Pão, Carne, Queijo, Bacon, Tomate e Presunto"></textarea>
+                    </div>
+                    <div class="admin_group">
+                        <label for="admin-image">Imagem (URL)</label>
+                        <input type="text" id="admin-image" placeholder="Ex: ./img/foto.jpg">
+                    </div>
+                    <div class="admin_group admin_group--inline">
+                        <label for="admin-price">Preço (R$)</label>
+                        <input type="number" required step="0.01" placeholder="19.90" id="admin-price">
+
+                        <div>
+                            <label for="admin-category">Categoria</label>
+                            <select id="admin-category">
+                                <option value="burguer">Burger</option>
+                                <option value="Combo">Combo</option>
+                                <option value="Bebida">Bebida</option>
+                                <option value="Sobremesas">Sobremesas</option>
+                            </select>
+
+                            <button type="submit" class="admin_submit">
+                                Adicionar Cardápio
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </section>
+
+        </section>
+        <aside class="cart">
+            <h2 class="cart_title">Seu pedido</h2>
+            <p class="cart_subtitle"> Revise antes de finalizar o pedido</p>
+
+
+            <div class="cart_items" id="cart-items">
+
+            </div>
+            <div class="cart_summary">
+                <div class="cart_row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">R$0,00</span>
+                </div>
+
+            <div class="cart_summary">
+                <div class="cart_row cart_row--total">
+                    <span>Total</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+            </div>
+
+            <div class="cart_notes">
+                <label for="order-notes">Observações para o pedido</label>
+                <textarea id="order-notes" rows="3"
+                    placeholder="Ex: Tirar cebola, enviar maionese, carne bem passada..."></textarea>
+            </div>
+
+            <div class="cart_actions">
+                <button id="clear-cart" class="btn btn--ghost">Limpar carrinho</button>
+                <button id="checkout-whatsapp" class="btn btn--primary">Finalizar pelo whatsapp</button>
+            </div>
+
+            <p id="cart-empty" class="cart_empty">
+                Seu carrinho está vazinho. Adicione alguns lanches deliciosos!
+            </p>
+
+        </aside>
+    </main>
+
+    <div id="toast">Item adicionado ao carrinho!</div>
+
+    <button id="mobile-cart-btn" class="mobile-cart-btn">
+        🛒 <span id="mobile-cart-count">0</span> itens
+    </button>
+
+    <div id="modal-details" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+        
+        <div class="modal-header">
+            <img id="modal-img" src="" alt="Produto">
+            <div class="modal-info">
+                <h3 id="modal-title">Nome do Burger</h3>
+                <p id="modal-desc">Descrição do produto...</p>
+                <span id="modal-price">R$ 0,00</span>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <div class="modal-group">
+                <h4>Ponto da Carne</h4>
+                <label class="option-row">
+                    <span>Ao ponto</span>
+                    <input type="radio" name="ponto" value="Ao Ponto" checked>
+                </label>
+                <label class="option-row">
+                    <span>Bem Passado</span>
+                    <input type="radio" name="ponto" value="Bem Passado">
+                </label>
+            </div>
+
+            <div class="modal-group">
+                <h4>Turbine seu Burger</h4>
+                <label class="option-row">
+                    <div class="option-info">
+                        <span>Carne Extra 120g</span>
+                        <span class="option-price">+ R$ 9,00</span>
+                    </div>
+                    <input type="checkbox" class="adicional-item" value="9.00" data-name="Carne Extra">
+                </label>
+                <label class="option-row">
+                    <div class="option-info">
+                        <span>Bacon Crocante</span>
+                        <span class="option-price">+ R$ 5,00</span>
+                    </div>
+                    <input type="checkbox" class="adicional-item" value="5.00" data-name="Bacon Extra">
+                </label>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button id="add-to-cart-modal" class="btn btn--primary btn-full">
+                Adicionar ao Pedido - <span id="modal-total-btn">R$ 0,00</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
