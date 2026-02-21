@@ -11,8 +11,8 @@ const products = [
     { id: 6, name: "Onions Burger", description: "Pão brioche, carne 120g, cheddar, anéis de cebola, bacon e cream cheese.", price: 24.90, category: "burguer", image: "./img/onionsBurger.jpg", tag: "" },
     { id: 7, name: "Combo Smash", description: "1 Smash Burger + 1 Batata P + 1 Refri Lata.", price: 35.90, category: "combo", image: "./img/comboSmash.jpg", tag: "Oferta" },
     { id: 8, name: "Combo Casal", description: "2 X-Burgers + 2 Batatas M + 1 Refri 1.5L.", price: 69.90, category: "combo", image: "./img/comboCasal.AVIF", tag: "Para dois" },
-    { id: 9, name: "Coca-Cola Lata", description: "350ml bem gelada.", price: 5.90, category: "bebida", image: "./img/cocaLata.WEBP", tag: "" },
-    { id: 10, name: "Guaraná Lata", description: "350ml bem gelada.", price: 5.90, category: "bebida", image: "./img/guaranaAntartica.PNG", tag: "" },
+    { id: 9, name: "Coca-Cola Lata", description: "350ml bem gelada.", price: 5.90, category: "bebida", image: "./img/cocaLata.webp", tag: "" },
+    { id: 10, name: "Guaraná Lata", description: "350ml bem gelada.", price: 5.90, category: "bebida", image: "./img/guaranaAntartica.png", tag: "" },
     { id: 11, name: "Água Mineral", description: "500ml sem gás.", price: 3.50, category: "bebida", image: "./img/aguaMineral.jpg", tag: "" },
     { id: 12, name: "Milkshake Choc", description: "400ml cremoso.", price: 15.90, category: "sobremesa", image: "./img/milkshakeChocolate.jpg", tag: "Delícia" },
     { id: 13, name: "Pudim", description: "Fatia de pudim de leite condensado.", price: 8.90, category: "sobremesa", image: "./img/pudim.jpg", tag: "" }
@@ -301,4 +301,5 @@ elements.mobileCartBtn.addEventListener("click", () => {
 
 
 renderProducts();
+
 
