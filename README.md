@@ -28,3 +28,5 @@ JavaScript (ES6+): Lógica de manipulação do DOM, gerenciamento de estado do c
 Google Fonts: Tipografia focada em legibilidade (Poppins).
 
 Desenvolvido com ❤️ para transformar negócios locais.
+
+Acesse pelo link: https://caiobraga19.github.io/Mini-Loja-Estilo-Ifood/
