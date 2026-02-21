@@ -3,7 +3,7 @@ console.log("App iniciado!");
 
 const WHATSAPP_NUMBER = "5524988781344"; 
 const products = [
-    { id: 1, name: "Smash Clássico", description: "Pão brioche, 2 smash's de 60g, cheddar, picles, cebola roxa, catchup e mostarda.", price: 27.90, category: "burguer", image: "./img/SmashClassico.jpg", tag: "Clássico" },
+    { id: 1, name: "Smash Clássico", description: "Pão brioche, 2 smash's de 60g, cheddar, picles, cebola roxa, catchup e mostarda.", price: 27.90, category: "burguer", image: "./img/smashClassico.jpg", tag: "Clássico" },
     { id: 2, name: "Cheddar Bacon", description: "Pão brioche, 2 smash's de 60g, muito cheddar, bacon crocante e molho da casa.", price: 28.90, category: "burguer", image: "./img/cheddarBacon.jpg", tag: "Mais vendido" },
     { id: 3, name: "Doritos Bacon", description: "Pão brioche, Blend 120g, cheddar, bacon, Doritos e maionese artesanal.", price: 31.90, category: "burguer", image: "./img/doritosBacon.jpg", tag: "Crocante" },
     { id: 4, name: "Triplo Burger", description: "Pão brioche, 3 blends de 120g, 6 fatias de cheddar e maionese.", price: 39.90, category: "burguer", image: "./img/triploBurger.jpg", tag: "Gigante" },
@@ -301,3 +301,4 @@ elements.mobileCartBtn.addEventListener("click", () => {
 
 
 renderProducts();
+
