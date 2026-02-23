@@ -30,3 +30,5 @@ Google Fonts: Tipografia focada em legibilidade (Poppins).
 Desenvolvido com ❤️ para transformar negócios locais.
 
 Acesse pelo link: https://caiobraga19.github.io/Mini-Loja-Estilo-Ifood/
+
+Sistema em melhoria ainda!
